@@ -1,2 +1,2 @@
 # lifecycle-dev-test
-A test repo for lifecycle
+A test repo for lifecycle connections
