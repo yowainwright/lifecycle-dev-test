@@ -38,3 +38,15 @@ services:
           host: "lifecycle.dev.goodrx.com"
           defaultInternalHostname: "lifecycle-test-good-dev-0"
           defaultPublicUrl: "lifecycle-test-good-dev-0.lifecycle.dev.goodrx.com"
+  - name: 'codefresh-test'
+    codefresh:
+      repository: yowainwright/lifecycle-dev-test
+      branchName: main
+      env:
+        COMPUTE_BUILD_ENABLED: true
+      deploy:
+        pipelineId: '61a832aecb657804cd847dc4'
+        trigger: 'pr_verify'
+      destroy: 
+        pipelineId: '61a832aecb657804cd847dc4'
+        trigger: 'pr_verify'
