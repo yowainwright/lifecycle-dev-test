@@ -42,7 +42,7 @@ services:
   - name: lifecycle-codefresh-test
     codefresh:
       repository: yowainwright/lifecycle-dev-test
-      branchName: main
+      branchName: test-test
       env:
         COMPUTE_BUILD_ENABLED: true
       deploy:
