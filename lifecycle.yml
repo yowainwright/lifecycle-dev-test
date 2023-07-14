@@ -5,6 +5,15 @@ version: 0.0.3-alpha-1
 environment:
   defaultServices:
     - name: "lifecycle-dev-test"
+    - name: 'fastly'
+      repository: 'goodRx/fastly-infrastructure'
+      branch: 'master'
+    - name: 'auth0'
+      serviceId: 47
+    - name: 'cwf'
+  optionalServices:
+    - name: 'bond'
+      serviceId: 60
 
 services:
   - name: lifecycle-dev-test
