@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: playwright tests
 
 on:
   push:
@@ -6,9 +6,8 @@ on:
   pull_request:
     branches: [main]
 
-
 jobs:
-  create-pull-request:
+  tests:
     runs-on: ubuntu-latest
 
     strategy:
