@@ -1,8 +1,6 @@
 name: Lifecycle basic e2e tests ♻️
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
