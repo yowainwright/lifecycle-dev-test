@@ -6,7 +6,7 @@ const initialURL = 'https://github.com/yowainwright/lifecycle-dev-test/'
 test('basic repository test', async ({ page }) => {
   await page.goto(initialURL);
   const readmeTitle = page.locator('.markdown-body h1').first();
-  await expect(readmeTitle).toContainText('Lifecycle Dev Test');
+  await expect(readmeTitle).toContainText('Lifecycle Dev Test PR');
 });
 
 test('basic PR test', async ({ page }) => {
