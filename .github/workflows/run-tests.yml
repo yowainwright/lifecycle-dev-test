@@ -1,4 +1,4 @@
-name: run lifecycle tests
+name: Lifecycle e2e tests ♻️
 
 on:
   push:
@@ -16,6 +16,7 @@ jobs:
 
     env:
       PR_NUMBER: ${{ github.event.number }}
+      PR_BRANCH: ${{ github.ref_name }}
 
     steps:
       - uses: actions/checkout@v3
@@ -37,4 +38,4 @@ jobs:
         run: echo $env && echo $PR_NUMBER
 
       - name: Run  tests
-        run: pnpm exec playwright test && echo $PULL_REQUEST_NUMBER
+        run: pnpm exec playwright test && echo $PR_NUMBER && echo $PR_BRANCH
