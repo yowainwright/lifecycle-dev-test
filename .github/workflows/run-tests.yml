@@ -1,4 +1,4 @@
-name: create pr
+name: run lifecycle tests
 
 on:
   push:
@@ -28,9 +28,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
-      - run: TIME=$(date "+%Y.%m.%d-%H.%M.%S"); echo 'New pull request created:' + $TIME >> test.md
-      - run: echo 'creating pull request'
-      - run: echo ${{ github.event.client_payload.sha }}
+      - run: TIME=$(date "+%Y.%m.%d-%H.%M.%S"); echo 'New pull request created:' + $TIME >> test-run-logs.md
 
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
@@ -38,5 +36,5 @@ jobs:
       - name: List env variables
         run: echo $env && echo $PR_NUMBER
 
-      # - name: Run Playwright tests
-      #   run: pnpm exec playwright test && echo $PULL_REQUEST_NUMBER
+      - name: Run  tests
+        run: pnpm exec playwright test && echo $PULL_REQUEST_NUMBER
