@@ -1,0 +1,32 @@
+{
+  "name": "lifecycle-dev-test",
+  "version": "1.0.0",
+  "description": "An environment for testing Lifecycle",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Jeffry Wainwright <https://jeffry.in> (yowainwright@gmail.com)",
+  "devDependencies": {
+    "@playwright/test": "^1.36.2",
+    "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "chomp": "^0.2.17",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.9.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6"
+  },
+  "eslintConfig": {
+    "root": true,
+	  "parser": "@typescript-eslint/parser",
+	  "plugins": ["@typescript-eslint"],
+	  "extends": [
+		  "eslint:recommended",
+		  "plugin:@typescript-eslint/recommended",
+		  "prettier"
+	  ]
+  },
+  "prettier": {
+     "printWidth": 120
+  }
+}
