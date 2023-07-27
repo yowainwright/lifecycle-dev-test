@@ -1,4 +1,4 @@
-name: Lifecycle e2e tests ♻️
+name: Lifecycle basic e2e tests ♻️
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  lifecycle-tests:
+  basic-pr-tests:
     runs-on: ubuntu-latest
 
     strategy:
@@ -37,5 +37,7 @@ jobs:
       - name: List env variables
         run: echo $env && echo $PR_NUMBER
 
-      - name: Run  tests
-        run: pnpm exec playwright test && echo $PR_NUMBER && echo $PR_BRANCH
+      - name: Run basic tests
+        run: |
+          echo "Running basic PR tests. A 'test-lifecycle' label is required to run lifecycle related tests." &&
+          pnpm exec playwright test tests/initial-pr.spec.ts
