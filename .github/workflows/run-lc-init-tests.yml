@@ -1,0 +1,44 @@
+name: Lifecycle basic initialization e2e tests ♻️
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  lc-init-tests:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.issue.pull_request &&
+      contains(github.event.issue.labels.*.name, 'test-lifecycle')
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    env:
+      PR_NUMBER: ${{ github.event.number }}
+      PR_BRANCH: ${{ github.ref_name }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: latest
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - run: pnpm install --no-frozen-lockfile
+      - run: TIME=$(date "+%Y.%m.%d-%H.%M.%S"); echo 'New pull request created:' + $TIME >> test-run-logs.md
+
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
+
+      - name: List env variables
+        run: echo $env && echo $PR_NUMBER
+
+      - name: Run Lifecycle initial tests
+        run: |
+          echo "Running initial lifecycle tests!" &&
+          pnpm exec playwright test tests/initial-pr.spec.ts
