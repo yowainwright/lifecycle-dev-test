@@ -27,13 +27,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
-      - run: TIME=$(date "+%Y.%m.%d-%H.%M.%S"); echo 'New pull request created:' + $TIME >> test-run-logs.md
 
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
 
       - name: List env variables
-        run: echo $env && echo $PR_NUMBER
+        run: echo $env
 
       - name: Run basic tests
         run: |
