@@ -1,8 +1,8 @@
 name: Lifecycle basic initialization e2e tests ♻️
 
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    branches: [main]
 
 jobs:
   lc-init-tests:
