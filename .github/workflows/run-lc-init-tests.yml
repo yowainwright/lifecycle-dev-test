@@ -8,6 +8,7 @@ jobs:
   lc-init-tests:
     runs-on: ubuntu-latest
     if: contains(github.event.pull_request.labels.*.name, 'test-lifecycle')
+    timeout-minutes: 15
 
     strategy:
       matrix:
