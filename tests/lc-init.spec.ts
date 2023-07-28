@@ -16,6 +16,6 @@ test('LC Status Comment', async ({ page }) => {
   await page.goto(url);
   const lcStatusComment = page.locator('.comment-body.markdown-body', { has: page.getByText('You can use this comment to build, update, and track, a Lifecycle environment for this pull request.') })
   await expect(lcStatusComment).toBeDefined();
-  // await expect(lcStatusComment).toContainText('lifecycle-codefresh-test: update-lc-test')
-  // await expect(lcStatusComment).toContainText(' lifecycle-dev-test: update-lc-test')
+  await expect(lcStatusComment).toContainText('lifecycle-codefresh-test: update-lc-test')
+  await expect(lcStatusComment).toContainText(' lifecycle-dev-test: update-lc-test')
 })
