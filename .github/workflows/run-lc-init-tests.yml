@@ -36,4 +36,4 @@ jobs:
       - name: Run Lifecycle initial tests
         run: |
           echo "Running initial lifecycle tests!" &&
-          pnpm exec playwright test tests/initial-pr.spec.ts
+          pnpm exec playwright test tests/lc-init.spec.ts
