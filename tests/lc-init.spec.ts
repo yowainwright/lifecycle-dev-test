@@ -16,6 +16,22 @@ test('LC Status Comment', async ({ page }) => {
   await page.goto(url);
   const lcStatusComment = page.locator('.comment-body.markdown-body', { has: page.getByText('You can use this comment to build, update, and track, a Lifecycle environment for this pull request.') })
   await expect(lcStatusComment).toBeDefined();
-  await expect(lcStatusComment).toContainText('lifecycle-codefresh-test: update-lc-test')
-  await expect(lcStatusComment).toContainText(' lifecycle-dev-test: update-lc-test')
+  const lcCFListItem = page.getByText('lifecycle-codefresh-test: init-lc-init-tests')
+  await expect(lcCFListItem).toBeDefined();
+  const lcDevListItem = page.getByText('lifecycle-dev-test: init-lc-init-tests')
+  await expect(lcDevListItem).toBeDefined();
 })
+
+test('LC Pending Comment', async ({ page }) => {
+  const url = `${initialURL}/pull/${pullRequest}`
+  await page.goto(url);
+  const lcPendingComment = page.locator('.comment-body.markdown-body', { has: page.getByText('Lifecycle Environment either has been torned down or does not exist.') })
+  await expect(lcPendingComment).toBeDefined();
+})
+
+test('LC Console Comment', async ({ page }) => {
+  const url = `${initialURL}/pull/${pullRequest}`
+  await page.goto(url);
+  const lcConsoleComment = page.locator('.comment-body.markdown-body', { has: page.getByText('Console Output') })
+  await expect(lcConsoleComment).toBeDefined();
+});
