@@ -1,4 +1,4 @@
-name: Lifecycle basic e2e tests ♻️
+name: Lifecycle basic initialization e2e tests ♻️
 
 on:
   issue_comment:
