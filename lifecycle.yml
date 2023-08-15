@@ -3,6 +3,7 @@ version: 0.0.3-alpha-1
 
 
 environment:
+  enabledFeatures: ['showLifecycleVersion']
   defaultServices:
     - name: "lifecycle-dev-test"
     - name: "lifecycle-codefresh-test"
