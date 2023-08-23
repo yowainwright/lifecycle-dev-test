@@ -3,6 +3,7 @@ version: 0.0.3-alpha-1
 
 
 environment:
+  enabledFeatures: ['useCodefreshCheckout']
   defaultServices:
     - name: "lifecycle-dev-test"
 
