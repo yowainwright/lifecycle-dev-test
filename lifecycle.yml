@@ -9,7 +9,6 @@ environment:
 services:
   - name: 'lifecycle-dev-test'
     github:
-      defaultUUID: 'good-dev-0'
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
       docker:
