@@ -31,7 +31,3 @@ services:
           tcpSocketPort: 8080
           httpGet:
             port: 8080
-        hostnames:
-          host: "lifecycle.dev.goodrx.com"
-          defaultInternalHostname: "lifecycle-test-good-dev-0"
-          defaultPublicUrl: "lifecycle-test-good-dev-0.lifecycle.dev.goodrx.com"
