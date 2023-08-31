@@ -5,14 +5,15 @@ version: 0.0.3-alpha-1
 environment:
   defaultServices:
     - name: "lifecycle-dev-test"
-
+            
 services:
-  - name: lifecycle-dev-test
+  - name: 'lifecycle-dev-test'
     github:
-      repository: yowainwright/lifecycle-dev-test
-      branchName: main
+      defaultUUID: 'good-dev-0'
+      repository: 'yowainwright/lifecycle-dev-test'
+      branchName: 'main'
       docker:
-        defaultTag: main
+        defaultTag: 'main'
         app:
           dockerfilePath: Dockerfile
           env:
@@ -28,12 +29,9 @@ services:
           memory:
             request: "100Mi"
         readiness:
-          tcpSocketPort: 8090
-          initialDelaySeconds: 0
-          periodSeconds: 10
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 5
+          tcpSocketPort: 8080
+          httpGet:
+            port: 8080
         hostnames:
           host: "lifecycle.dev.goodrx.com"
           defaultInternalHostname: "lifecycle-test-good-dev-0"
