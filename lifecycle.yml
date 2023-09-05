@@ -3,7 +3,7 @@ version: 0.0.3-alpha-1
 
 
 environment:
-  enabledFeatures: 'cf-new'
+  enabledFeatures: ['cf-new']
   defaultServices:
     - name: "lifecycle-dev-test"
             
