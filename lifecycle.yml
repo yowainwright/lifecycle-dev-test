@@ -9,7 +9,7 @@ environment:
             
 services:
   - name: 'lifecycle-dev-test'
-    appShort: 'lfc'
+    appShort: 'jeffpoc'
     github:
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
