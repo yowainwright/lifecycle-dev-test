@@ -65,5 +65,5 @@ services:
             port: 8080
         hostnames:
           host: 'lifecycle.dev.goodrx.com'
-          defaultInternalHostname: 'lifecycle-dev-test-2'
-          defaultPublicUrl: 'lifecycle-dev-2-test-good-dev-0.lifecycle.dev.goodrx.com'
+          defaultInternalHostname: 'svc-k'
+          defaultPublicUrl: 'svc-k-good-dev-0.lifecycle.dev.goodrx.com'
