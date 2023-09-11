@@ -38,7 +38,7 @@ services:
           host: 'lifecycle.dev.goodrx.com'
           defaultInternalHostname: 'lifecycle-dev-test'
           defaultPublicUrl: 'lifecycle-dev-test-good-dev-0.lifecycle.dev.goodrx.com'
-  - name: 'svc-k
+  - name: 'svc-k'
     appShort: 'lck'
     github:
       repository: 'yowainwright/lifecycle-dev-test'
