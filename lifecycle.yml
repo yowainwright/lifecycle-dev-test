@@ -3,14 +3,12 @@ version: 0.0.3-alpha-1
 
 
 environment:
-  enabledFeatures: ['cf-new', 'ecr-new']
   defaultServices:
     - name: "lifecycle-dev-test"
     - name: "svc-k"
             
 services:
   - name: 'lifecycle-dev-test'
-    appShort: 'lcj'
     github:
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
@@ -39,7 +37,6 @@ services:
           defaultInternalHostname: 'lifecycle-dev-test'
           defaultPublicUrl: 'lifecycle-dev-test-good-dev-0.lifecycle.dev.goodrx.com'
   - name: 'svc-k'
-    appShort: 'lck'
     github:
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
