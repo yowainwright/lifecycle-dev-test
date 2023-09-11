@@ -6,7 +6,7 @@ environment:
   enabledFeatures: ['cf-new', 'ecr-new']
   defaultServices:
     - name: "lifecycle-dev-test"
-    - name: "lifecycle-dev-test-2"
+    - name: "lifecycle-codefresh-test"
             
 services:
   - name: 'lifecycle-dev-test'
@@ -38,32 +38,15 @@ services:
           host: 'lifecycle.dev.goodrx.com'
           defaultInternalHostname: 'lifecycle-dev-test'
           defaultPublicUrl: 'lifecycle-dev-test-good-dev-0.lifecycle.dev.goodrx.com'
-  - name: 'lifecycle-dev-test-2'
-    appShort: 'lck'
-    github:
-      repository: 'yowainwright/lifecycle-dev-test'
-      branchName: 'main'
-      docker:
-        defaultTag: 'main'
-        app:
-          dockerfilePath: Dockerfile
-          env:
-            COMPONENT: app
-          ports:
-            - 8080
-      deployment:
-        public: true
-        capacityType: "SPOT"
-        resource:
-          cpu:
-            request: "10m"
-          memory:
-            request: "100Mi"
-        readiness:
-          tcpSocketPort: 8080
-          httpGet:
-            port: 8080
-        hostnames:
-          host: 'lifecycle.dev.goodrx.com'
-          defaultInternalHostname: 'lifecycle-dev-test-2'
-          defaultPublicUrl: 'lifecycle-dev-test-2-good-dev-0.lifecycle.dev.goodrx.com'
+  - name: lifecycle-codefresh-test
+    codefresh:
+      repository: yowainwright/lifecycle-dev-test
+      branchName: main
+      env:
+        COMPUTE_BUILD_ENABLED: true
+      deploy:
+        pipelineId: '61a832aecb657804cd847dc4'
+        trigger: 'pr_verify'
+      destroy:
+        pipelineId: '61a832aecb657804cd847dc4'
+        trigger: 'pr_verify'
