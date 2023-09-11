@@ -39,6 +39,7 @@ services:
           defaultInternalHostname: 'lifecycle-dev-test'
           defaultPublicUrl: 'lifecycle-dev-test-good-dev-0.lifecycle.dev.goodrx.com'
   - name: lifecycle-codefresh-test
+    appShort: 'lck'
     codefresh:
       repository: yowainwright/lifecycle-dev-test
       branchName: main
