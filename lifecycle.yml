@@ -6,7 +6,7 @@ environment:
   enabledFeatures: ['cf-new', 'ecr-new']
   defaultServices:
     - name: "lifecycle-dev-test"
-    - name: "lifecycle-codefresh-test"
+    - name: "svc-k"
             
 services:
   - name: 'lifecycle-dev-test'
