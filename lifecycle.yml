@@ -3,13 +3,14 @@ version: 0.0.3-alpha-1
 
 
 environment:
-  enabledFeatures: ['cf-new', 'ecr-new', 'gdrx-infra']
+  enabledFeatures: ['cf-new', 'ecr-new']
   defaultServices:
     - name: "lifecycle-dev-test"
+    - name: "svc-k"
             
 services:
   - name: 'lifecycle-dev-test'
-    appShort: 'lfc'
+    appShort: 'lcj'
     github:
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
@@ -37,3 +38,32 @@ services:
           host: 'lifecycle.dev.goodrx.com'
           defaultInternalHostname: 'lifecycle-dev-test'
           defaultPublicUrl: 'lifecycle-dev-test-good-dev-0.lifecycle.dev.goodrx.com'
+  - name: 'svc-k'
+    appShort: 'lck'
+    github:
+      repository: 'yowainwright/lifecycle-dev-test'
+      branchName: 'main'
+      docker:
+        defaultTag: 'main'
+        app:
+          dockerfilePath: Dockerfile
+          env:
+            COMPONENT: app
+          ports:
+            - 8080
+      deployment:
+        public: true
+        capacityType: "SPOT"
+        resource:
+          cpu:
+            request: "10m"
+          memory:
+            request: "100Mi"
+        readiness:
+          tcpSocketPort: 8080
+          httpGet:
+            port: 8080
+        hostnames:
+          host: 'lifecycle.dev.goodrx.com'
+          defaultInternalHostname: 'svc-k'
+          defaultPublicUrl: 'svc-k-good-dev-0.lifecycle.dev.goodrx.com'
