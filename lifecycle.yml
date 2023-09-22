@@ -3,13 +3,11 @@ version: 0.0.3-alpha-1
 
 
 environment:
-  enabledFeatures: ['cf-new', 'ecr-new', 'gdrx-infra']
   defaultServices:
     - name: "lifecycle-dev-test"
             
 services:
   - name: 'lifecycle-dev-test'
-    appShort: 'jeffpoc'
     github:
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
