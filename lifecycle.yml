@@ -14,7 +14,6 @@ services:
       branchName: 'main'
       docker:
         defaultTag: 'main'
-        buildPipelineName: 'lifecycle/cf-jeffpoc'
         app:
           dockerfilePath: Dockerfile
           env:
