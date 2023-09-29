@@ -14,7 +14,7 @@ services:
       branchName: 'main'
       docker:
         defaultTag: 'main'
-        pipelineId: 'lifecycle/cf-test'
+        pipelineId: 'lifecycle/lc-test'
         app:
           dockerfilePath: Dockerfile
           env:
