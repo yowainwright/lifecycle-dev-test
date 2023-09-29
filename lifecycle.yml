@@ -14,7 +14,7 @@ services:
       branchName: 'main'
       docker:
         defaultTag: 'main'
-        buildPipelineName: 'lifecycle/cf-test'
+        pipelineId: 'lifecycle/cf-test'
         app:
           dockerfilePath: Dockerfile
           env:
