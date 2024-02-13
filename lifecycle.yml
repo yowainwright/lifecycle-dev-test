@@ -3,7 +3,7 @@ version: 0.0.3-alpha-1
 
 
 environment:
-  enabledFeatures: ['testFeature']
+  enabledFeatures: ['force-pull-request-branch-hack']
   defaultServices:
     - name: "lifecycle-dev-test"
             
