@@ -4,6 +4,7 @@ version: 0.0.3-alpha-1
 
 environment:
   enabledFeatures: ['testFeature']
+  githubDeployments: true
   defaultServices:
     - name: "lifecycle-dev-test"
             
