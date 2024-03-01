@@ -3,6 +3,7 @@ version: 0.0.3-alpha-1
 
 
 environment:
+  autoDeploy: true
   enabledFeatures: ['testFeature']
   githubDeployments: true
   defaultServices:
