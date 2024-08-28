@@ -21,8 +21,6 @@ services:
           dockerfilePath: Dockerfile
           env:
             COMPONENT: app
-          ports:
-            - 8080
       deployment:
         public: true
         capacityType: "SPOT"
@@ -31,7 +29,3 @@ services:
             request: "10m"
           memory:
             request: "100Mi"
-        readiness:
-          tcpSocketPort: 8080
-          httpGet:
-            port: 8080
