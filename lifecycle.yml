@@ -10,11 +10,12 @@ environment:
             
 services:
   - name: 'lifecycle-dev-test'
-    appShort: 'jeffpoc'
     github:
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
       docker:
+        builder:
+          engine: 'buildkit'
         defaultTag: 'main'
         pipelineId: 'lifecycle/lc-test'
         app:
