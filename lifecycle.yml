@@ -1,10 +1,10 @@
 ---
-version: '1.1.0'
+version: '2.3.0'
 
 
 environment:
   autoDeploy: true
-  enabledFeatures: ['testFeature']
+  useGithubStatusComment: true
   defaultServices:
     - name: "lifecycle-dev-test"
             
