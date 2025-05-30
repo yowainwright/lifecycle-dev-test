@@ -13,11 +13,11 @@ services:
     github:
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
+      builder:
+          engine: 'buildkit'
       docker:
         defaultTag: 'main'
         pipelineId: 'lifecycle/lc-test'
-        builder:
-          engine: 'buildkit'
         app:
           dockerfilePath: Dockerfile
           env:
