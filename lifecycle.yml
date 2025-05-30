@@ -1,5 +1,5 @@
 ---
-version: '2.3.0'
+version: '2.1.0'
 
 
 environment:
@@ -14,8 +14,7 @@ services:
       repository: 'yowainwright/lifecycle-dev-test'
       branchName: 'main'
       docker:
-        defaultTag: 'main'
-        pipelineId: 'lifecycle/lc-test'
+        defaultTag: ''
         builder:
           engine: 'buildkit'
         app:
